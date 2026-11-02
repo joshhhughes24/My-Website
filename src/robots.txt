@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joshhhughes24.github.io/My-Website/sitemap.xml
