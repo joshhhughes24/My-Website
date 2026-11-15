@@ -12,10 +12,6 @@ python3 -m http.server 4173 --directory src
 
 Then open `http://localhost:4173/`.
 
-## Add an essay
-
-In `essays.html`, duplicate one `.essay-link` entry and give it a unique `data-essay-id`, date, title, and summary. In `site.js`, add the essay's paragraphs to `essayBodies` under the same ID. Keep entries newest first.
-
 ## Add a project PDF later
 
 Put the PDF in `assets/projects/` and add a link or viewer for it inside the matching project entry in `projects.html`. Keep the project accordion and description in place when no PDF is available.

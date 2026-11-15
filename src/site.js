@@ -14,61 +14,6 @@
     });
   });
 
-  const essayList = document.querySelector('.essay-list-view');
-  const essayReader = document.querySelector('.essay-reader');
-  const essaysBackground = document.querySelector('.essays-background');
-  const essayItems = Array.from(document.querySelectorAll('.essay-link'));
-  const essayBodies = {
-    'essay-1': ['[First paragraph of the essay.]', '[Second paragraph of the essay.]'],
-    'essay-2': ['[First paragraph of the essay.]', '[Second paragraph of the essay.]'],
-    'essay-3': ['[First paragraph of the essay.]', '[Second paragraph of the essay.]'],
-    'essay-4': ['[First paragraph of the essay.]', '[Second paragraph of the essay.]'],
-  };
-  const essays = essayItems.map((link) => ({
-    id: link.dataset.essayId,
-    date: link.querySelector('.date').textContent,
-    title: link.querySelector('.essay-title').textContent,
-    body: essayBodies[link.dataset.essayId] || [],
-  }));
-
-  const showEssay = (id, updateHistory = true) => {
-    const essay = essays.find((item) => item.id === id);
-    if (!essay || !essayList || !essayReader) return;
-    essayList.hidden = true;
-    essayReader.hidden = false;
-    if (essaysBackground) essaysBackground.hidden = true;
-    essayReader.querySelector('.essay-reader-date').textContent = essay.date;
-    essayReader.querySelector('.essay-reader-title').textContent = essay.title;
-    essayReader.querySelector('.essay-body').replaceChildren(...essay.body.map((paragraph) => {
-      const element = document.createElement('p');
-      element.textContent = paragraph;
-      return element;
-    }));
-    if (updateHistory) history.pushState({ essayId: id }, '', `#${id}`);
-    window.scrollTo(0, 0);
-  };
-
-  const closeEssay = (updateHistory = true) => {
-    if (!essayList || !essayReader) return;
-    essayReader.hidden = true;
-    essayList.hidden = false;
-    if (essaysBackground) essaysBackground.hidden = false;
-    if (updateHistory) history.pushState({}, '', location.pathname);
-    window.scrollTo(0, 0);
-  };
-
-  essayItems.forEach((link) => link.addEventListener('click', (event) => {
-    event.preventDefault();
-    showEssay(link.dataset.essayId);
-  }));
-  document.querySelector('.essay-back')?.addEventListener('click', () => closeEssay());
-  window.addEventListener('popstate', () => {
-    const essayId = location.hash.slice(1);
-    if (essayId) showEssay(essayId, false);
-    else closeEssay(false);
-  });
-  if (location.hash) showEssay(location.hash.slice(1), false);
-
   const cvSections = Array.from(document.querySelectorAll('.cv-section'));
   const cvLinks = Array.from(document.querySelectorAll('[data-cv-section]'));
   cvLinks.forEach((link) => link.addEventListener('click', () => {
@@ -90,7 +35,7 @@
     const scrollable = document.documentElement.scrollHeight - viewportHeight;
     if (progressBar) progressBar.style.transform = `scaleX(${scrollable > 0 ? scrollTop / scrollable : 0})`;
     const parallaxOffset = -Math.min(scrollTop * 0.35, viewportHeight * 0.3);
-    document.querySelectorAll('.projects-background, .projects-axis, .essays-background').forEach((element) => {
+    document.querySelectorAll('.projects-background, .projects-axis').forEach((element) => {
       element.style.transform = `translateY(${parallaxOffset}px)`;
     });
     updateCVSection();

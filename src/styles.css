@@ -128,31 +128,6 @@ button { font: inherit; }
   line-height: 1.7;
   text-wrap: pretty;
 }
-.stats {
-  display: grid;
-  max-width: 900px;
-  grid-auto-columns: minmax(0, 1fr);
-  grid-auto-flow: column;
-  grid-template-rows: repeat(5, auto);
-  gap: 2px clamp(36px, 8vw, 120px);
-  margin: 28px 0 0;
-  color: var(--fg-muted);
-  font-family: var(--font-mono);
-  font-size: clamp(14px, 1.2vw, 18px);
-  line-height: 1.7;
-}
-.stats div { display: flex; gap: 0.45em; min-width: 0; }
-.stats dt::after { content: ':'; }
-.stats dd { margin: 0; }
-.stats-note {
-  max-width: 100%;
-  margin: 8px 0 0;
-  color: var(--fg-muted);
-  font-family: var(--font-mono);
-  font-size: clamp(13px, 1.15vw, 17px);
-  line-height: 1.7;
-}
-.section-spaced { margin-top: clamp(72px, 12vh, 128px) !important; }
 .prose { display: flex; flex-direction: column; gap: 1.1em; }
 
 @media (max-width: 700px) {
@@ -164,8 +139,6 @@ button { font: inherit; }
   .scroll-arrow { left: calc(50% + 50px); }
   .home-bio { padding: 72px 20px 88px 132px; }
   .home-bio h2, .page-title { font-size: 38px; }
-  .stats { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 0 24px; font-size: 12px; }
-  .stats-note { font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -183,14 +156,14 @@ button { font: inherit; }
 }
 .page-main .page-title { margin: clamp(32px, 6vh, 64px) 0 clamp(8px, 2vh, 24px); line-height: 0.9; letter-spacing: 0.02em; }
 
-.projects-background, .essays-background {
+.projects-background {
   position: fixed;
   z-index: 0;
   inset: 0;
   pointer-events: none;
   will-change: transform;
 }
-.projects-background span, .essays-background span, .projects-axis span { position: absolute; inset: 0; }
+.projects-background span, .projects-axis span { position: absolute; inset: 0; }
 .projects-background span:first-child {
   background: var(--accent);
   -webkit-mask: url('assets/projects-bg-lines.png') center / cover no-repeat;
@@ -244,7 +217,7 @@ button { font: inherit; }
 }
 .accordion-trigger:hover { background: var(--hover); }
 .accordion-trigger span { font-family: var(--font-display); font-size: clamp(28px, 2.8vw, 42px); font-weight: 800; line-height: 1; text-transform: uppercase; }
-.accordion-trigger svg, .essay-link svg, .essay-back svg { width: 26px; height: 26px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; transition: transform 0.25s ease; }
+.accordion-trigger svg { width: 26px; height: 26px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; transition: transform 0.25s ease; }
 .accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
 .accordion-panel { padding: 0 clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px); color: var(--fg-muted); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.7; }
 .accordion-panel[hidden] { display: none; }
@@ -269,45 +242,6 @@ button { font: inherit; }
 .cv-subnav a { color: var(--nav-muted); }
 .cv-subnav a[aria-current="location"] { color: var(--accent); }
 
-.essays-background { height: 200vh; }
-.essays-background span:first-child {
-  background: var(--fg);
-  -webkit-mask: url('assets/essays-bg-base.webp') center top / max(100vw, 177.78vh) auto repeat-y;
-  mask: url('assets/essays-bg-base.webp') center top / max(100vw, 177.78vh) auto repeat-y;
-  opacity: 0.22;
-}
-.essays-background span:last-child {
-  background: var(--accent);
-  -webkit-mask: url('assets/essays-bg-accent.png') center top / max(100vw, 177.78vh) auto repeat-y;
-  mask: url('assets/essays-bg-accent.png') center top / max(100vw, 177.78vh) auto repeat-y;
-  opacity: 0.45;
-}
-.essay-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-.essay-link {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 10px 32px;
-  padding: clamp(22px, 3vh, 32px) 4px;
-  border-bottom: 1px solid var(--line);
-  color: var(--fg);
-}
-.essay-copy { display: flex; min-width: 0; flex-direction: column; gap: 10px; }
-.essay-title { font-family: var(--font-display); font-size: clamp(26px, 2.6vw, 38px); font-weight: 800; line-height: 1.05; text-transform: uppercase; }
-.essay-summary { max-width: 620px; color: var(--fg-muted); font-size: clamp(15px, 1.2vw, 17px); line-height: 1.6; }
-.essay-link svg { width: 26px; height: 26px; }
-.essay-reader { max-width: 680px; margin-top: clamp(32px, 6vh, 64px); }
-.essay-reader[hidden] { display: none; }
-.essay-back { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: transparent; color: var(--nav-muted); cursor: pointer; font-size: 14px; font-weight: 500; letter-spacing: 0.06em; }
-.essay-back:hover { color: var(--accent); }
-.essay-back svg { width: 16px; height: 16px; }
-.essay-reader-date { margin: clamp(32px, 5vh, 48px) 0 14px; }
-.essay-reader-title { margin: 0 0 clamp(28px, 4vh, 40px) !important; color: var(--accent) !important; font-size: clamp(40px, 4.6vw, 68px) !important; font-weight: 800 !important; line-height: 0.95 !important; text-wrap: balance; }
-.essay-body { display: flex; flex-direction: column; gap: 1.2em; }
-.essay-body p { margin: 0; color: var(--fg-muted); font-size: clamp(17px, 1.35vw, 19px); line-height: 1.75; text-wrap: pretty; }
-
-.gallery-page { min-height: 100vh; background: #fff; }
-.gallery-main { min-height: 100vh; }
 .contact-main { position: relative; z-index: 2; display: flex; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; gap: clamp(24px, 4vh, 40px); padding: 0 clamp(150px, 17vw, 250px); text-align: center; }
 .contact-links { display: flex; gap: clamp(20px, 3vw, 36px); }
 .contact-links a { display: flex; width: clamp(72px, 7vw, 96px); aspect-ratio: 1; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); transition: background-color 0.2s ease; }
@@ -330,10 +264,6 @@ button { font: inherit; }
   .cv-entry > .date, .cv-entry > p, .cv-entry > ul { grid-column: 1; }
   .skill-list { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 6px; }
   .cv-subnav { gap: 7px; padding-left: 10px; font-size: 12px; }
-  .essays-main { padding-top: 82px; }
-  .essay-link { gap: 12px; padding: 22px 2px; }
-  .essay-title { font-size: 24px; }
-  .essay-summary { font-size: 14px; }
   .contact-main { padding: 0 18px 0 132px; }
   .contact-links { gap: 16px; }
   .contact-main > p { font-size: 40px; }
