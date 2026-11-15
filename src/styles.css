@@ -237,6 +237,7 @@ button { font: inherit; }
 .cv-entry-title { color: var(--fg); }
 .cv-muted { color: var(--fg-muted); }
 .cv-entry ul { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; padding-left: 1.2em; color: var(--fg-muted); }
+.cv-entry ul.education-list { display: grid; grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); column-gap: 32px; }
 .skill-list { display: grid; max-width: 620px; grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; grid-template-rows: repeat(4, auto); gap: 6px 48px; margin: 0; padding-left: 1.2em; color: var(--fg-muted); font-size: clamp(15px, 1.2vw, 17px); line-height: 1.5; }
 .nav-group { display: flex; flex-direction: column; gap: 12px; }
 .cv-subnav { display: flex; flex-direction: column; gap: 8px; padding-left: 14px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: none; }
@@ -263,6 +264,7 @@ button { font: inherit; }
   .cv-section h2 { font-size: 29px; }
   .cv-entry { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .cv-entry > .date, .cv-entry > p, .cv-entry > ul { grid-column: 1; }
+  .cv-entry ul.education-list { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
   .skill-list { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 6px; }
   .cv-subnav { gap: 7px; padding-left: 10px; font-size: 12px; }
   .contact-main { padding: 0 18px 0 132px; }
