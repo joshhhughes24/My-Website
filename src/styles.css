@@ -225,7 +225,7 @@ button { font: inherit; }
 .project-item { display: flex; flex-direction: column; gap: 8px; padding-top: 24px; border-top: 1px solid var(--line); }
 .project-item h3 { margin: 0; font-size: clamp(18px, 1.5vw, 21px); font-weight: 600; line-height: 1.4; }
 .project-item p { max-width: 760px; }
-.project-pdf-viewer { display: block; width: 100%; height: min(78vh, 1000px); min-height: 420px; border: 1px solid var(--line); background: #fff; }
+.project-poster-preview { display: block; width: 100%; max-width: 900px; height: auto; border: 1px solid var(--line); background: #fff; }
 
 .cv-main { gap: clamp(24px, 3vw, 36px); }
 .cv-section { display: flex; flex-direction: column; gap: 24px; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--line); scroll-margin-top: 60px; }
@@ -258,7 +258,6 @@ button { font: inherit; }
   .accordion-trigger { min-height: 70px; padding: 18px; }
   .accordion-trigger span { font-size: 25px; }
   .accordion-panel { padding: 0 18px 22px; font-size: 15px; }
-  .project-pdf-viewer { height: 75vh; min-height: 360px; }
   .cv-main { gap: 18px; }
   .cv-section { gap: 18px; padding: 20px 16px; }
   .cv-section h2 { font-size: 29px; }
