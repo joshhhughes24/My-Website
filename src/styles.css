@@ -242,6 +242,11 @@ button { font: inherit; }
 .cv-subnav a { color: var(--nav-muted); }
 .cv-subnav a[aria-current="location"] { color: var(--accent); }
 
+.contact-artwork { width: min(250px, 100%); margin: 0; }
+.contact-artwork img { display: block; width: 100%; aspect-ratio: 4 / 5; border: 1px solid var(--line); object-fit: cover; }
+.contact-artwork figcaption { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; margin-top: 8px; color: var(--nav-muted); font: 11px/1.5 var(--font-mono); }
+.contact-artwork a { text-decoration: underline; text-underline-offset: 2px; }
+
 .contact-main { position: relative; z-index: 2; display: flex; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; gap: clamp(24px, 4vh, 40px); padding: 0 clamp(150px, 17vw, 250px); text-align: center; }
 .contact-links { display: flex; gap: clamp(20px, 3vw, 36px); }
 .contact-links a { display: flex; width: clamp(72px, 7vw, 96px); aspect-ratio: 1; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); transition: background-color 0.2s ease; }
