@@ -180,7 +180,7 @@
   };
 
   const animate = (now) => {
-    simulationTime += Math.min(0.1, (now - lastFrame) / 1000) * 0.35;
+    simulationTime += Math.min(0.1, (now - lastFrame) / 1000) * 0.3;
     lastFrame = now;
     draw(simulationTime);
     animationId = requestAnimationFrame(animate);
