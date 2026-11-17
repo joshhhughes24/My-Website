@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0 — 2026-11-17
+- Added the blog post "Finding the Curie Temperature of a Ferromagnet" to Projects → Physics, shown inline with a PDF download.
+
 ## 0.1.0 — 2026-11-02
 - Published the six-page personal website to GitHub Pages.
 - Added the initial Home, Projects, CV, Essays, Gallery, and Contact pages with responsive layouts and interactions.
