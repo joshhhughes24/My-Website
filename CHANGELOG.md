@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1 — 2026-11-17
+- Updated the Curie temperature blog post to the revised version (adds a Discussion section).
+
 ## 0.2.0 — 2026-11-17
 - Added the blog post "Finding the Curie Temperature of a Ferromagnet" to Projects → Physics, shown inline with a PDF download.
 
