@@ -21,7 +21,7 @@
       const panel = document.getElementById(button.getAttribute('aria-controls'));
       button.setAttribute('aria-expanded', String(!expanded));
       if (panel) panel.hidden = expanded;
-      if (label) label.textContent = expanded ? 'Read blog post' : 'Hide blog post';
+      if (label) label.textContent = expanded ? 'Show project' : 'Hide project';
     });
   });
 
