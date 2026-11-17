@@ -14,6 +14,17 @@
     });
   });
 
+  document.querySelectorAll('.blog-toggle').forEach((button) => {
+    const label = button.querySelector('span');
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      button.setAttribute('aria-expanded', String(!expanded));
+      if (panel) panel.hidden = expanded;
+      if (label) label.textContent = expanded ? 'Read blog post' : 'Hide blog post';
+    });
+  });
+
   const cvSections = Array.from(document.querySelectorAll('.cv-section'));
   const cvLinks = Array.from(document.querySelectorAll('[data-cv-section]'));
   cvLinks.forEach((link) => link.addEventListener('click', () => {
