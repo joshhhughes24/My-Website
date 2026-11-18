@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 — 2026-11-18
+- Homepage redesign (design 3): new network and path background art with a soft light wash, and a highlighted Home tab in the navigation.
+
 ## 0.2.1 — 2026-11-17
 - Updated the Curie temperature blog post to the revised version (adds a Discussion section).
 

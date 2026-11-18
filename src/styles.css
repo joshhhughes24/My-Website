@@ -38,15 +38,18 @@ button { font: inherit; }
 .home-mask span { position: absolute; inset: 0; }
 .home-mask span:first-child {
   background: var(--fg);
-  -webkit-mask: url('assets/home-bg-net-v3.webp') center / cover no-repeat;
-  mask: url('assets/home-bg-net-v3.webp') center / cover no-repeat;
-  opacity: 0.6;
+  -webkit-mask: url('assets/home-bg2-net.webp') center / cover no-repeat;
+  mask: url('assets/home-bg2-net.webp') center / cover no-repeat;
+  opacity: 0.5;
 }
-.home-mask span:last-child {
+.home-mask span:nth-child(2) {
   background: var(--accent);
-  -webkit-mask: url('assets/home-bg-path-v3.png') center / cover no-repeat;
-  mask: url('assets/home-bg-path-v3.png') center / cover no-repeat;
-  opacity: 0.3;
+  -webkit-mask: url('assets/home-bg2-path.webp') center / cover no-repeat;
+  mask: url('assets/home-bg2-path.webp') center / cover no-repeat;
+  opacity: 0.7;
+}
+.home-mask span:nth-child(3) {
+  background: linear-gradient(90deg, rgba(243, 245, 244, 0.55) 0%, rgba(243, 245, 244, 0.5) clamp(560px, 52vw, 1000px), rgba(243, 245, 244, 0.5) 100%);
 }
 .vignette { z-index: 1; background: radial-gradient(ellipse 90% 70% at 50% 45%, transparent 40%, rgba(243, 245, 244, 0.8) 100%); }
 .progress { position: fixed; inset: 0 0 auto; z-index: 6; height: 2px; pointer-events: none; }
@@ -72,6 +75,13 @@ button { font: inherit; }
 .site-nav a { color: var(--nav-muted); }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
 .site-nav a[aria-current="page"] { pointer-events: none; }
+.home-page .site-nav a[aria-current="page"] {
+  align-self: flex-start;
+  margin: -7px 0 -7px -15px;
+  padding: 4px 12px;
+  border: 3px solid #dfe4e8;
+  background: #dfe4e8;
+}
 
 .home-content { position: relative; z-index: 2; }
 .hero {
