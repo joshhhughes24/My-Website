@@ -75,7 +75,7 @@ button { font: inherit; }
 .site-nav a { color: var(--nav-muted); }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
 .site-nav a[aria-current="page"] { pointer-events: none; }
-.home-page .site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"] {
   align-self: flex-start;
   margin: -7px 0 -7px -15px;
   padding: 4px 12px;

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1 — 2026-11-18
+- The highlight box now marks the current tab in the navigation on every page.
+
 ## 0.3.0 — 2026-11-18
 - Homepage redesign (design 3): new network and path background art with a soft light wash, and a highlighted Home tab in the navigation.
 
